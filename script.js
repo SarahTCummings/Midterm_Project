@@ -19,9 +19,8 @@ $(document).ready(function() {
     console.log("card clicked");
     // swapping card class here
     lastClicked = $(this);
-    // $(lastClicked).attr("class", "cards back");
+    $(lastClicked).attr("class", "cards back");
     $(lastClicked).children().attr("src", "images/1.jpg");
-
   });
 
   $(document).on("click", ".back", function() {
@@ -30,7 +29,6 @@ $(document).ready(function() {
     // swapping card class here
     lastClicked = $(this);
     $(lastClicked).attr("class", "cards front");
-
+    $(lastClicked).children().attr("src", "images/back_of_card_small.jpg");
   });
-
 });
