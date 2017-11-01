@@ -1,5 +1,6 @@
 body {
   background-color: #36384C;
+  font-family: 'Rozha One', serif;
 }
 
 #startScreen {
@@ -12,7 +13,7 @@ body {
 #titlebar {
   height: 80px;
   background-color: rgba(180, 179, 188, 0.2);
-  text-align: center; 
+  text-align: center;
 
 }
 #gameScreen {
@@ -28,12 +29,14 @@ body {
   height:150px;
   width:100px;
   display:inline-block;
+  padding:5px; 
 
 }
 .front {
-  background-color: #849974;
+  background-color: #E9DCCD;
+
 }
 
 .back{
-  background-color: #E9DCCD;
+  background-color: #849974;
 }
