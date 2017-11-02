@@ -9,7 +9,8 @@ var cardList = ["<img src='images/1.jpg'>", "<img src='images/1.jpg'>",
   "<img src='images/7.jpg'>", "<img src='images/7.jpg'>",
   "<img src='images/8.jpg'>", "<img src='images/8.jpg'>",
 ];
-
+    var wholeDiv1 = "";
+    var wholeDiv2 = "";
 //These are the start button, display game screen, and begin timer functions.
 $("#startButton").click(function() {
   var seconds_left = 10;
@@ -23,7 +24,6 @@ $("#startButton").click(function() {
   }
 }, 1000);
        // flip the view when you start the game
-  console.log("Button clicked");
   $("#startScreen").fadeToggle(function() {
     $("#startScreen").css("display", "none");
   });
@@ -69,14 +69,25 @@ function memoryFlipTile(currentCardClicked, val) {
     if (memory_values.length == 0) {
       memory_values.push(val);
       cardIDs.push(currentCardClicked.id);
-      // if one card is flipped and we flip another, this part of the function runs
+    wholeDiv1 = currentCardClicked;
+      // if one cardss flipped and we flip another, this part of the function runs
     } else if (memory_values.length == 1) {
       memory_values.push(val);
       cardIDs.push(currentCardClicked.id);
+       wholeDiv2 = currentCardClicked;
       // this part checks whether there is a match
       if (memory_values[0] == memory_values[1]) {
         cardsFlipped += 2;
-        console.log(memory_values[0]);
+        console.log("Thing we're looking for?", wholeDiv1);
+        console.log("that other thing:", wholeDiv2);
+        setTimeout(
+      function() {
+        $(wholeDiv1).attr("style", "visibility:hidden;");
+        $(wholeDiv2).attr("style", "visibility:hidden;");
+    //do something special
+  }, 3000);
+
+        // console.log(memory_values[0]);
         // Clear both arrays
         memory_values = [];
         cardIDs = [];
@@ -93,12 +104,13 @@ function memoryFlipTile(currentCardClicked, val) {
           // Flip the 2 cards back over
           var tile_1 = document.getElementById(cardIDs[0]);
           var tile_2 = document.getElementById(cardIDs[1]);
-          console.log(tile_1);
-          console.log(tile_2);
           tile_1.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
           tile_1.innerHTML = "";
           tile_2.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
           tile_2.innerHTML = "";
+
+          wholeDiv1 = "";
+          wholeDiv2 = "";
           // Clear both arrays
           memory_values = [];
           cardIDs = [];
@@ -114,11 +126,8 @@ $(document).on("click", ".cards", function() {
   // flip the card when you play the game
   // swapping card class here
   clickCount++;
-  console.log ("Clicks" + clickCount);
-  document.getElementById("clickCounter").innerHTML = clickCount; 
+  document.getElementById("clickCounter").innerHTML = clickCount;
   lastClicked = $(this);
-  console.log(lastClicked);
-  console.log(this);
   // here we are calling the function to flip the cards
   memoryFlipTile(this, cardList[this.id]);
 });

@@ -1,10 +1,30 @@
 body {
   background-color: #36384C;
   font-family: 'Playfair Display', serif;
+  z-index: 1;
 }
 
-h1, #clickCounter {
+#titlebar {
+  height: 80px;
+  text-align: center;
+  display:flex;
+}
+
+#timer_div {
+  display:flex;
+  color: #E9DCCD;
+  justify-content: flex-start;
+}
+
+h1 {
+  display:flex;
+  justify-content:center;
   color: rgba(180, 179, 188, 0.8);
+}
+
+#clickCounter {
+  color: rgba(180, 179, 188, 0.8);
+  justify-content: flex-end; 
 }
 
 h3 {
@@ -29,20 +49,13 @@ h3 {
   background-color: rgba(180, 179, 188, 0.2);
 }
 
-#timer_div {
-  float: left;
-  color: #E9DCCD;
-}
 
 /*#startScreen {
   display: flex;
   justify-content: center;
 }*/
 
-#titlebar {
-  height: 80px;
-  text-align: center;
-}
+
 
 /*#gameScreen {
   width: 500px;
