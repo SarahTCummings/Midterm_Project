@@ -4,58 +4,67 @@ body {
 }
 
 h1 {
-color: rgba(180, 179, 188, 0.2);
+  color: rgba(180, 179, 188, 0.2);
 }
+
 h3 {
-color:  #E3BAB3;
+  color: #E3BAB3;
 }
 
 .material-icons {
   float: left;
   color: #E9DCCD;
   background-color: rgba(180, 179, 188, 0.2);
-
 }
 
 #timer_div {
-float:left;
-
+  float: left;
 }
 
-#startScreen {
+/*#startScreen {
   display: flex;
   justify-content: center;
-
-
-}
+}*/
 
 #titlebar {
   height: 80px;
-
   text-align: center;
-
 }
-#gameScreen {
 
+/*#gameScreen {
   width: 500px;
   display: none;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
+}*/
 
-
-}
-.cards{
-  height:150px;
-  width:100px;
-  display:inline-block;
-  padding:5px;
-
-}
-.front {
-  background-color: #E9DCCD;
-
+#gameScreen {
+  display: none;
+  justify-content: center;
 }
 
-.back{
-  background-color: #849974;
+div#memory_board {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+div#memory_board>div {
+  background: url(images/back_of_card_small.jpg) no-repeat;
+  border: #000 1px solid;
+  width: 100px;
+  height: 150px;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 100px;
+  height: 150px;
+}
+
+.cards {
+
 }
