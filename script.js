@@ -94,6 +94,7 @@ function memoryFlipTile(currentCardClicked, val) {
         // This checks to see if the whole board is cleared
         if (cardsFlipped == cardList.length) {
           alert("Board cleared... click to restart");
+          clickCount = 0;
           document.getElementById('memory_board').innerHTML = "";
           // a new board is created here
           newBoard();
@@ -126,7 +127,7 @@ $(document).on("click", ".cards", function() {
   // flip the card when you play the game
   // swapping card class here
   clickCount++;
-  document.getElementById("clickCounter").innerHTML = clickCount;
+  document.getElementById("clickCounter").innerHTML = "Click Count: " + clickCount;
   lastClicked = $(this);
   // here we are calling the function to flip the cards
   memoryFlipTile(this, cardList[this.id]);

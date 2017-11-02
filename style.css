@@ -20,6 +20,7 @@ body {
 h1 {
 
   color: rgba(180, 179, 188, 0.8);
+  padding: right 20px;
 }
 
 #clickCounter {
