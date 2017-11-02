@@ -8,23 +8,28 @@ body {
   height: 80px;
   text-align: center;
   display:flex;
+  justify-content: space-between;
 }
 
 #timer_div {
-  display:flex;
+
   color: #E9DCCD;
-  justify-content: flex-start;
+
 }
 
 h1 {
-  display:flex;
-  justify-content:center;
+
   color: rgba(180, 179, 188, 0.8);
 }
 
 #clickCounter {
   color: rgba(180, 179, 188, 0.8);
-  justify-content: flex-end; 
+  width:150px;
+
+}
+
+#counter {
+  width:150px;
 }
 
 h3 {
@@ -37,10 +42,7 @@ h3 {
   position: absolute;
   left: 50%;
   top: 80%;
-  align-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: flex-end;
 }
 
 .material-icons {
