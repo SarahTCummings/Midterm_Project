@@ -35,6 +35,7 @@ $("#startButton").click(function() {
 var memory_values = [];
 var cardIDs = [];
 var cardsFlipped = 0;
+var clickCount = 0;
 
 //This is the shuffle function
 Array.prototype.memory_tile_shuffle = function() {
@@ -112,6 +113,9 @@ function memoryFlipTile(currentCardClicked, val) {
 $(document).on("click", ".cards", function() {
   // flip the card when you play the game
   // swapping card class here
+  clickCount++;
+  console.log ("Clicks" + clickCount);
+  document.getElementById("clickCounter").innerHTML = clickCount; 
   lastClicked = $(this);
   console.log(lastClicked);
   console.log(this);

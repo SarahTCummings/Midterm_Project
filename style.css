@@ -3,7 +3,7 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-h1 {
+h1, #clickCounter {
   color: rgba(180, 179, 188, 0.8);
 }
 
@@ -31,6 +31,7 @@ h3 {
 
 #timer_div {
   float: left;
+  color: #E9DCCD;
 }
 
 /*#startScreen {
