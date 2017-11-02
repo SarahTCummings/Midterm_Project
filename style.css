@@ -12,9 +12,28 @@ body {
 }
 
 #timer_div {
-
   color: #E9DCCD;
+}
 
+#startButton {
+  background-color: #E3BAB3;
+  color: #36384C;
+  font-size: 1.5rem;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  transform: translateY(50px);
+  border-radius: 5px;
+}
+
+#startButton:hover {
+  background-color: white;
+  border-radius: 5px;
+}
+
+#startButton:active {
+  background-color: lightblue;
+  border-radius: 5px;
 }
 
 h1 {
@@ -24,7 +43,7 @@ h1 {
 }
 
 #clickCounter {
-  color: rgba(180, 179, 188, 0.8);
+  color: #E9DCCD;
   width:150px;
 
 }
@@ -40,10 +59,12 @@ h3 {
 }
 
 .quotebox {
-  position: absolute;
+  /*position: absolute;
   left: 50%;
   top: 80%;
-  align-items: flex-end;
+  align-items: flex-end;*/
+  align-items: center;
+  transform: translateY(20vh);
 }
 
 .material-icons {
@@ -52,13 +73,10 @@ h3 {
   background-color: rgba(180, 179, 188, 0.2);
 }
 
-
-/*#startScreen {
+#startScreen {
   display: flex;
   justify-content: center;
-}*/
-
-
+}
 
 /*#gameScreen {
   width: 500px;

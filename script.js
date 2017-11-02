@@ -13,7 +13,7 @@ var cardList = ["<img src='images/1.jpg'>", "<img src='images/1.jpg'>",
     var wholeDiv2 = "";
 //These are the start button, display game screen, and begin timer functions.
 $("#startButton").click(function() {
-  var seconds_left = 10;
+  var seconds_left = 91;
   var interval = setInterval(function() {
   document.getElementById('timer_div').innerHTML = --seconds_left;
 
