@@ -1,14 +1,26 @@
 body {
   background-color: #36384C;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 h1 {
-  color: rgba(180, 179, 188, 0.2);
+  color: rgba(180, 179, 188, 0.8);
 }
 
 h3 {
+  font-family: 'Raleway', sans-serif;
   color: #E3BAB3;
+
+}
+
+.quotebox {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .material-icons {

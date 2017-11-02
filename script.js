@@ -61,17 +61,17 @@ function newBoard() {
 }
 
 // this function is keeoping tabs on whether a card matches another
-function memoryFlipTile(tile, val) {
-  if (tile.innerHTML == "" && memory_values.length < 2) {
-    tile.innerHTML = val;
+function memoryFlipTile(currentCardClicked, val) {
+  if (currentCardClicked.innerHTML == "" && memory_values.length < 2) {
+    currentCardClicked.innerHTML = val;
     // this conditional statement checks how many cards have been flipped
     if (memory_values.length == 0) {
       memory_values.push(val);
-      cardIDs.push(tile.id);
+      cardIDs.push(currentCardClicked.id);
       // if one card is flipped and we flip another, this part of the function runs
     } else if (memory_values.length == 1) {
       memory_values.push(val);
-      cardIDs.push(tile.id);
+      cardIDs.push(currentCardClicked.id);
       // this part checks whether there is a match
       if (memory_values[0] == memory_values[1]) {
         cardsFlipped += 2;
@@ -89,7 +89,7 @@ function memoryFlipTile(tile, val) {
         // this happens when the cards don't match
       } else {
         function flip2Back() {
-          // Flip the 2 tiles back over
+          // Flip the 2 cards back over
           var tile_1 = document.getElementById(cardIDs[0]);
           var tile_2 = document.getElementById(cardIDs[1]);
           console.log(tile_1);
