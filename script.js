@@ -86,10 +86,12 @@ function memoryFlipTile(currentCardClicked, val) {
         // we add to the number of cards we've cleared
         cardsFlipped += 2;
         // this function delays the removal of matched cards by 3 seconds
+        var var1=wholeDiv1;
+        var var2=wholeDiv2;
         setTimeout(
           function() {
-            $(wholeDiv1).attr("style", "visibility:hidden;");
-            $(wholeDiv2).attr("style", "visibility:hidden;");
+            $(var1).attr("style", "visibility:hidden;");
+            $(var2).attr("style", "visibility:hidden;");
             // do something special
           }, 3000);
         // we clear both lists after the matched cards disappear
