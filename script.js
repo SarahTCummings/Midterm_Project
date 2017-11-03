@@ -1,5 +1,4 @@
-
-//This is an array that is holding our card images
+// this is an array that is holding our card images
 var cardList = ["<img src='images/1.jpg'>", "<img src='images/1.jpg'>",
   "<img src='images/2.jpg'>", "<img src='images/2.jpg'>",
   "<img src='images/3.jpg'>", "<img src='images/3.jpg'>",
@@ -9,21 +8,22 @@ var cardList = ["<img src='images/1.jpg'>", "<img src='images/1.jpg'>",
   "<img src='images/7.jpg'>", "<img src='images/7.jpg'>",
   "<img src='images/8.jpg'>", "<img src='images/8.jpg'>",
 ];
-    var wholeDiv1 = "";
-    var wholeDiv2 = "";
-//These are the start button, display game screen, and begin timer functions.
+
+var wholeDiv1 = "";
+var wholeDiv2 = "";
+
+// these are the start button, display game screen, and begin timer functions.
 $("#startButton").click(function() {
   var seconds_left = 91;
   var interval = setInterval(function() {
-  document.getElementById('timer_div').innerHTML = --seconds_left;
+    document.getElementById('timer_div').innerHTML = --seconds_left;
 
-  if (seconds_left <= 0)
-  {
-     document.getElementById('timer_div').innerHTML = "You have lost.";
-     clearInterval(interval);
-  }
-}, 1000);
-       // flip the view when you start the game
+    if (seconds_left <= 0) {
+      document.getElementById('timer_div').innerHTML = "You have lost.";
+      clearInterval(interval);
+    }
+  }, 1000);
+  // flip the view when you start the game
   $("#startScreen").fadeToggle(function() {
     $("#startScreen").css("display", "none");
   });
@@ -32,12 +32,16 @@ $("#startButton").click(function() {
   });
 });
 
+// this list stores the cards that are currently face up
 var memory_values = [];
+// and this list stores their #IDs
 var cardIDs = [];
+// this keeps track of how many cards have been cleared from the board
 var cardsFlipped = 0;
+// this keeps track of how many total moves you've made
 var clickCount = 0;
 
-//This is the shuffle function
+// this is the shuffle function that randomizes our list of cards
 Array.prototype.memory_tile_shuffle = function() {
   var i = this.length,
     j, temp;
@@ -52,32 +56,36 @@ Array.prototype.memory_tile_shuffle = function() {
 function newBoard() {
   cardsFlipped = 0;
   var output = '';
-  //This calls the shuffle function & applies it to the image list & creates the board
+  // this calls the shuffle function & applies it to the image list & creates the board
   cardList.memory_tile_shuffle();
   for (var i = 0; i < cardList.length; i++) {
     output += '<div id="' + i + '" class="cards" ></div>';
   }
-  //this line creates the divs for the cards
+  // this line creates the divs for the cards
   document.getElementById('memory_board').innerHTML = output;
 }
 
 // this function is keeoping tabs on whether a card matches another
 function memoryFlipTile(currentCardClicked, val) {
   if (currentCardClicked.innerHTML == "" && memory_values.length < 2) {
+    // this adds the image to the card if it hasn't already been done so yet
     currentCardClicked.innerHTML = val;
     // this conditional statement checks how many cards have been flipped
     if (memory_values.length == 0) {
+      // if no cards have been flipped yet, the card is stored in a list
       memory_values.push(val);
       cardIDs.push(currentCardClicked.id);
-    wholeDiv1 = currentCardClicked;
-      // if one cardss flipped and we flip another, this part of the function runs
+      wholeDiv1 = currentCardClicked;
+      // if one card is flipped and we flip another, this part of the function runs
     } else if (memory_values.length == 1) {
       memory_values.push(val);
       cardIDs.push(currentCardClicked.id);
-       wholeDiv2 = currentCardClicked;
+      wholeDiv2 = currentCardClicked;
       // this part checks whether there is a match
       if (memory_values[0] == memory_values[1]) {
+        // we add to the number of cards we've cleared
         cardsFlipped += 2;
+<<<<<<< HEAD
         var var1 = wholeDiv1;
         var var2 = wholeDiv2;
         console.log("Thing we're looking for?", wholeDiv1);
@@ -91,11 +99,25 @@ function memoryFlipTile(currentCardClicked, val) {
 
         // console.log(memory_values[0]);
         // Clear both arrays
+=======
+        // this function delays the removal of matched cards by 3 seconds
+        setTimeout(
+          function() {
+            $(wholeDiv1).attr("style", "visibility:hidden;");
+            $(wholeDiv2).attr("style", "visibility:hidden;");
+            // do something special
+          }, 3000);
+        // we clear both lists after the matched cards disappear
+>>>>>>> 86d158d3a0902d9d73976f4a415b9e801ce746ba
         memory_values = [];
         cardIDs = [];
         // This checks to see if the whole board is cleared
         if (cardsFlipped == cardList.length) {
+<<<<<<< HEAD
           alert("You have won! Board cleared... click to restart");
+=======
+          alert("You have won! Click to restart");
+>>>>>>> 86d158d3a0902d9d73976f4a415b9e801ce746ba
           clickCount = 0;
           document.getElementById('memory_board').innerHTML = "";
           // a new board is created here
@@ -104,10 +126,12 @@ function memoryFlipTile(currentCardClicked, val) {
         // this happens when the cards don't match
       } else {
         function flip2Back() {
-          // Flip the 2 cards back over
+          // flip the 2 cards back over
           var tile_1 = document.getElementById(cardIDs[0]);
           var tile_2 = document.getElementById(cardIDs[1]);
+          // by setting their background images to the card back image
           tile_1.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
+          //
           tile_1.innerHTML = "";
           tile_2.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
           tile_2.innerHTML = "";
