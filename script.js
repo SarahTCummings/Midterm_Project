@@ -85,21 +85,6 @@ function memoryFlipTile(currentCardClicked, val) {
       if (memory_values[0] == memory_values[1]) {
         // we add to the number of cards we've cleared
         cardsFlipped += 2;
-<<<<<<< HEAD
-        var var1 = wholeDiv1;
-        var var2 = wholeDiv2;
-        console.log("Thing we're looking for?", wholeDiv1);
-        console.log("that other thing:", var1);
-
-        setTimeout(function() {
-          $(var1).attr("style", "visibility:hidden;");
-          $(var2).attr("style", "visibility:hidden;");
-          //do something special
-        }, 3000);
-
-        // console.log(memory_values[0]);
-        // Clear both arrays
-=======
         // this function delays the removal of matched cards by 3 seconds
         setTimeout(
           function() {
@@ -108,16 +93,11 @@ function memoryFlipTile(currentCardClicked, val) {
             // do something special
           }, 3000);
         // we clear both lists after the matched cards disappear
->>>>>>> 86d158d3a0902d9d73976f4a415b9e801ce746ba
         memory_values = [];
         cardIDs = [];
         // This checks to see if the whole board is cleared
         if (cardsFlipped == cardList.length) {
-<<<<<<< HEAD
-          alert("You have won! Board cleared... click to restart");
-=======
           alert("You have won! Click to restart");
->>>>>>> 86d158d3a0902d9d73976f4a415b9e801ce746ba
           clickCount = 0;
           document.getElementById('memory_board').innerHTML = "";
           // a new board is created here

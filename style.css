@@ -96,24 +96,17 @@ div#memory_board {
 div#memory_board>div {
   background: url(images/back_of_card_small.jpg) no-repeat;
   border: #000 1px solid;
-  width: 122px;
-  height: 172px;
+  width: 100px;
+  height: 150px;
   float: left;
   margin: 5px;
-  /*padding: 10px;*/
+  padding: 10px;
   cursor: pointer;
 }
 
 img {
-  width: 122px;
-  height: 172px;
+  width: 100px;
+  height: 150px;
 }
 
-<<<<<<< HEAD
-.cards {
-
-
-}
-=======
 .cards {}
->>>>>>> 86d158d3a0902d9d73976f4a415b9e801ce746ba
