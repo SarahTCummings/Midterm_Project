@@ -7,7 +7,7 @@ body {
 #titlebar {
   height: 80px;
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -37,25 +37,22 @@ body {
 }
 
 h1 {
-
   color: rgba(180, 179, 188, 0.8);
   padding: right 20px;
 }
 
 #clickCounter {
   color: #E9DCCD;
-  width:150px;
-
+  width: 150px;
 }
 
 #counter {
-  width:150px;
+  width: 150px;
 }
 
 h3 {
   font-family: 'Raleway', sans-serif;
   color: #E3BAB3;
-
 }
 
 .quotebox {
@@ -112,6 +109,4 @@ img {
   height: 150px;
 }
 
-.cards {
-
-}
+.cards {}
