@@ -5,10 +5,11 @@ body {
 }
 
 #titlebar {
-  height: 80px;
+  height: 2rem;
   text-align: center;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 #timer_div {
@@ -38,16 +39,25 @@ body {
 
 h1 {
   color: rgba(180, 179, 188, 0.8);
-  padding: right 20px;
+  font-size: 1.3rem;
+  margin: 0px;
+  width: 50%
 }
 
 #clickCounter {
   color: #E9DCCD;
-  width: 150px;
+  width: 20%;
+  font-size: 0.9rem;
+  text-align: right;
+  display: flex;
+  justify-content: center;
 }
 
 #counter {
-  width: 150px;
+  width: 20%;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 h3 {
@@ -55,57 +65,101 @@ h3 {
   color: #E3BAB3;
 }
 
-.quotebox {
-  /*position: absolute;
-  left: 50%;
-  top: 80%;
-  align-items: flex-end;*/
-  align-items: center;
-  transform: translateY(20vh);
-}
-
-.material-icons {
+.material-icons.md-18 {
   float: left;
   color: #E9DCCD;
-  background-color: rgba(180, 179, 188, 0.2);
+  font-size: 1rem;
 }
 
 #startScreen {
   display: flex;
   justify-content: center;
+  height: 0px;
 }
-
-/*#gameScreen {
-  width: 500px;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-}*/
 
 #gameScreen {
   display: none;
   justify-content: center;
+  width: 100vw;
 }
 
 div#memory_board {
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
+  width: 100vw;
+  height: 90vh;
+  position: absolute;
+  top: 10vh;
+  left: 0px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 div#memory_board>div {
-  background: url(images/back_of_card_small.jpg) no-repeat;
+  background: url(images/back_of_card_small.jpg);
   border: #000 1px solid;
-  width: 122px;
-  height: 172px;
+  width: 20vw;
+  height: 30vw;
   float: left;
-  margin: 5px;
+  margin: 0px auto;
   cursor: pointer;
 }
 
 img {
-  width: 122px;
-  height: 172px;
+  width: 20vw;
+  height: 30vw;
 }
 
-.cards {}
+@media screen and (min-width: 768px) {
+
+  div#memory_board {
+    top: 5vh;
+    width: 90vw;
+    position: inherit;
+  }
+
+  div#memory_board>div {
+    margin: 5px auto;
+    width: 18vw;
+    height: 27vw;
+  }
+
+  img {
+    width: 18vw;
+    height: 27vw;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #clickCounter {
+    font-size: 1.5rem;
+  }
+
+  #counter {
+    font-size: 1.5rem;
+  }
+
+  .material-icons.md-18 {
+    font-size: 30px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  div#memory_board {
+    width: 75vw;
+  }
+
+  div#memory_board>div {
+    width: 16vw;
+    height: 24vw;
+  }
+
+  img {
+    width: 16vw;
+    height: 24vw;
+  }
+
+}

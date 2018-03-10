@@ -17,9 +17,8 @@ $("#startButton").click(function() {
   var seconds_left = 91;
   var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
-
     if (seconds_left <= 0) {
-      document.getElementById('timer_div').innerHTML = "You have lost.";
+      document.getElementById('timer_div').innerHTML = "You lost.";
       clearInterval(interval);
     }
   }, 1000);
@@ -112,10 +111,10 @@ function memoryFlipTile(currentCardClicked, val) {
           var tile_1 = document.getElementById(cardIDs[0]);
           var tile_2 = document.getElementById(cardIDs[1]);
           // by setting their background images to the card back image
-          tile_1.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
+          tile_1.style.background = 'url(images/back_of_card_small.jpg)';
           //
           tile_1.innerHTML = "";
-          tile_2.style.background = 'url(images/back_of_card_small.jpg) no-repeat';
+          tile_2.style.background = 'url(images/back_of_card_small.jpg)';
           tile_2.innerHTML = "";
 
           wholeDiv1 = "";
@@ -135,7 +134,7 @@ $(document).on("click", ".cards", function() {
   // flip the card when you play the game
   // swapping card class here
   clickCount++;
-  document.getElementById("clickCounter").innerHTML = "Click Count: " + clickCount;
+  document.getElementById("clickCounter").innerHTML = "Clicks: " + clickCount;
   lastClicked = $(this);
   // here we are calling the function to flip the cards
   memoryFlipTile(this, cardList[this.id]);
