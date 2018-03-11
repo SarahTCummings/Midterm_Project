@@ -11,14 +11,18 @@ var cardList = ["<img src='images/1.jpg'>", "<img src='images/1.jpg'>",
 
 var wholeDiv1 = "";
 var wholeDiv2 = "";
+var seconds_left = 90;
+var seconds_expired = 0;
 
 // these are the start button, display game screen, and begin timer functions.
 $("#startButton").click(function() {
-  var seconds_left = 91;
+
+
   var interval = setInterval(function() {
-    document.getElementById('timer_div').innerHTML = --seconds_left;
+    seconds_expired++;
+    document.getElementById('timer_div').innerHTML = "<i class='material-icons md-18'>timer</i>" + "&nbsp" + ("0" + (--seconds_left)).slice(-2);
     if (seconds_left <= 0) {
-      document.getElementById('timer_div').innerHTML = "You lost.";
+      document.getElementById('timer_div').innerHTML = "&nbsp You lost";
       clearInterval(interval);
     }
   }, 1000);
@@ -98,8 +102,9 @@ function memoryFlipTile(currentCardClicked, val) {
         cardIDs = [];
         // This checks to see if the whole board is cleared
         if (cardsFlipped == cardList.length) {
-          alert("You have won! Click to restart");
+          alert("You won! It took you " + clickCount + " flips and " + seconds_expired + " seconds. Click to restart");
           clickCount = 0;
+          seconds_left = 90
           document.getElementById('memory_board').innerHTML = "";
           // a new board is created here
           newBoard();
