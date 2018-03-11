@@ -19,11 +19,12 @@ body {
 #startButton {
   background-color: #E3BAB3;
   color: #36384C;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   align-items: center;
   width: 100px;
   height: 60px;
-  transform: translateY(50px);
+  transform: translateY(10vh);
   border-radius: 5px;
 }
 
@@ -39,7 +40,7 @@ body {
 
 h1 {
   color: rgba(180, 179, 188, 0.8);
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0px;
   width: 50%
 }
