@@ -82,7 +82,7 @@ h3 {
 #gameScreen {
   display: none;
   justify-content: center;
-  width: 100vw;
+  width: 99vw;
 }
 
 div#memory_board {
@@ -115,19 +115,19 @@ img {
 
   div#memory_board {
     top: 5vh;
-    width: 90vw;
+    width: 62vh;
     position: inherit;
   }
 
   div#memory_board>div {
     margin: 5px auto;
-    width: 18vw;
-    height: 27vw;
+    width: 14vh;
+    height: 21vh;
   }
 
   img {
-    width: 18vw;
-    height: 27vw;
+    width: 14vh;
+    height: 21vh;
   }
 
   h1 {
@@ -151,17 +151,17 @@ img {
 @media screen and (min-width: 1024px) {
 
   div#memory_board {
-    width: 75vw;
+    width: 62vh;
   }
 
   div#memory_board>div {
-    width: 16vw;
-    height: 24vw;
+    width: 14vh;
+    height: 21vh;
   }
 
   img {
-    width: 16vw;
-    height: 24vw;
+    width: 14vh;
+    height: 21vh;
   }
 
   #titlebar {
