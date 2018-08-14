@@ -96,7 +96,7 @@ function memoryFlipTile(currentCardClicked, val) {
             $(var1).attr("style", "visibility:hidden;");
             $(var2).attr("style", "visibility:hidden;");
             // do something special
-          }, 3000);
+          }, 1500);
         // we clear both lists after the matched cards disappear
         memory_values = [];
         cardIDs = [];
