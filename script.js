@@ -104,7 +104,8 @@ function memoryFlipTile(currentCardClicked, val) {
         if (cardsFlipped == cardList.length) {
           alert("You won! It took you " + clickCount + " flips and " + seconds_expired + " seconds. Click to restart");
           clickCount = 0;
-          seconds_left = 90
+          seconds_left = 90;
+          seconds_expired = 0;
           document.getElementById('memory_board').innerHTML = "";
           // a new board is created here
           newBoard();
